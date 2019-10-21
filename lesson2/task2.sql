@@ -8,3 +8,4 @@ create table users (
 	id INT UNSIGNED,
 	name VARCHAR(100)
 );
+show tables;
