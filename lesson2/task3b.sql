@@ -5,4 +5,3 @@ create database sample;
 use sample;
 source example.sql;
 show tables;
-exit
