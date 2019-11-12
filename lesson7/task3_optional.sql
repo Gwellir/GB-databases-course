@@ -38,3 +38,12 @@ SELECT
   (SELECT name FROM cities WHERE label = flights.`from`) AS departure,
   (SELECT name FROM cities WHERE label = flights.`to`) AS arrival
 FROM flights;
+
+-- Выборка без лишних SELECT
+SELECT flights.id, c_from.name AS dept, c_to.name AS arrival
+FROM 
+  flights
+JOIN cities c_from
+  ON flights.`from` = c_from.label
+JOIN cities c_to
+  ON flights.`to` = c_to.label;
