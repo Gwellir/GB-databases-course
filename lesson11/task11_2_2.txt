@@ -1,0 +1,22 @@
+-- Задача 11_2.2
+-- При помощи базы данных Redis решите задачу
+-- поиска имени пользователя по электронному адресу
+-- и наоборот, поиск электронного адреса пользователя по его имени.
+
+Создать пару хешей user-email и email-user.
+
+user-email:
+127.0.0.1:6379> hset user-email pavel pavel@hotmail.com
+(integer) 1
+127.0.0.1:6379> hset user-email sasha sasha_sd@gmail.com
+(integer) 1
+127.0.0.1:6379> hget user-email pavel
+"pavel@hotmail.com"
+
+А также:
+127.0.0.1:6379> hset email-user pavel@hotmail.com pavel
+(integer) 1
+127.0.0.1:6379> hset email-user sasha_sd@gmail.com sasha
+(integer) 1
+127.0.0.1:6379> hget email-user sasha_sd@gmail.com
+"sasha"
